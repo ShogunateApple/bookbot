@@ -1,3 +1,9 @@
+#get a argument from the console
+import sys
+if (len(sys.argv) != 2):
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
 #returns a file as a single string
 def get_book_text(file_path):
     with open(file_path) as f:
@@ -14,7 +20,7 @@ from stats import character_count
 from stats import sort_dictionary
 
 #set the path of the book to check
-path_to_book = "books/frankenstein.txt"
+path_to_book = sys.argv[1]
 
 #main
 def main():
